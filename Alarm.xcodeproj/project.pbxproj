@@ -14,6 +14,7 @@
 		1A0FB7BF1CE19229006808D9 /* DateHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A0FB7BE1CE19229006808D9 /* DateHelper.swift */; };
 		4C8347DC1CEA66D2001E39E6 /* AlarmListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C8347DB1CEA66D2001E39E6 /* AlarmListTableViewController.swift */; };
 		4C8347DE1CEA66F9001E39E6 /* AlarmDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C8347DD1CEA66F9001E39E6 /* AlarmDetailTableViewController.swift */; };
+		4C8347E01CEA7A52001E39E6 /* SwitchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C8347DF1CEA7A52001E39E6 /* SwitchTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		1A0FB7BE1CE19229006808D9 /* DateHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateHelper.swift; sourceTree = "<group>"; };
 		4C8347DB1CEA66D2001E39E6 /* AlarmListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlarmListTableViewController.swift; sourceTree = "<group>"; };
 		4C8347DD1CEA66F9001E39E6 /* AlarmDetailTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlarmDetailTableViewController.swift; sourceTree = "<group>"; };
+		4C8347DF1CEA7A52001E39E6 /* SwitchTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwitchTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +64,7 @@
 				4C8347DB1CEA66D2001E39E6 /* AlarmListTableViewController.swift */,
 				4C8347DD1CEA66F9001E39E6 /* AlarmDetailTableViewController.swift */,
 				1A0FB7821CDD4F07006808D9 /* Main.storyboard */,
+				4C8347DF1CEA7A52001E39E6 /* SwitchTableViewCell.swift */,
 				1A0FB7BE1CE19229006808D9 /* DateHelper.swift */,
 				1A0FB7851CDD4F07006808D9 /* Assets.xcassets */,
 				1A0FB7871CDD4F07006808D9 /* LaunchScreen.storyboard */,
@@ -143,6 +146,7 @@
 			files = (
 				1A0FB77F1CDD4F07006808D9 /* AppDelegate.swift in Sources */,
 				4C8347DC1CEA66D2001E39E6 /* AlarmListTableViewController.swift in Sources */,
+				4C8347E01CEA7A52001E39E6 /* SwitchTableViewCell.swift in Sources */,
 				4C8347DE1CEA66F9001E39E6 /* AlarmDetailTableViewController.swift in Sources */,
 				1A0FB7BF1CE19229006808D9 /* DateHelper.swift in Sources */,
 			);
