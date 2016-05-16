@@ -61,8 +61,7 @@
 			isa = PBXGroup;
 			children = (
 				1A0FB77E1CDD4F07006808D9 /* AppDelegate.swift */,
-				4C8347DB1CEA66D2001E39E6 /* AlarmListTableViewController.swift */,
-				4C8347DD1CEA66F9001E39E6 /* AlarmDetailTableViewController.swift */,
+				4C8347E11CEA8CC9001E39E6 /* View Controllers */,
 				1A0FB7821CDD4F07006808D9 /* Main.storyboard */,
 				4C8347DF1CEA7A52001E39E6 /* SwitchTableViewCell.swift */,
 				1A0FB7BE1CE19229006808D9 /* DateHelper.swift */,
@@ -71,6 +70,15 @@
 				1A0FB78A1CDD4F07006808D9 /* Info.plist */,
 			);
 			path = Alarm;
+			sourceTree = "<group>";
+		};
+		4C8347E11CEA8CC9001E39E6 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				4C8347DB1CEA66D2001E39E6 /* AlarmListTableViewController.swift */,
+				4C8347DD1CEA66F9001E39E6 /* AlarmDetailTableViewController.swift */,
+			);
+			name = "View Controllers";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
