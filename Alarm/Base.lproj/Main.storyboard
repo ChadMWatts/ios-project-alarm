@@ -169,7 +169,11 @@
                     </tableView>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="New Alarm" id="0G8-Id-7D0">
-                        <barButtonItem key="rightBarButtonItem" title="save" id="QpP-gg-eCE"/>
+                        <barButtonItem key="rightBarButtonItem" title="save" id="QpP-gg-eCE">
+                            <connections>
+                                <action selector="saveButtonTapped:" destination="q9E-eJ-3eh" id="a94-L3-CjZ"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
