@@ -10,7 +10,14 @@ import Foundation
 
 class AlarmController {
     
-    var alarms: [Alarms] = []
+    static let sharedController = AlarmController()
+    
+    var alarms: [Alarm] = []
+    
+    init() {
+        self.alarms = []
+        self.alarms = mockAlarms()
+    }
     
     
     func addAlarm(fireTimeFromMidnight: NSTimeInterval, name: String) -> Alarm {
@@ -26,7 +33,15 @@ class AlarmController {
     }
     
     func deleteAlarm(alarm: Alarm) {
-        guard let index = alarms.indexOf(alarm) else {return}
+        guard let index = alarms.indexOf(alarm) else {
+            
+            return
+        }
+        
         alarms.removeAtIndex(index)
+    }
     
+    func mockAlarms() -> [Alarm] {
+        let alarm1 = Alarm(fireTimeFromMidnight: <#T##NSTimeInterval#>, name: <#T##String#>)
+    }
 }
