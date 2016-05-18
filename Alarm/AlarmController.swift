@@ -11,7 +11,7 @@ import UIKit
 class AlarmController {
     
     static let sharedController = AlarmController()
-    private let kAlarms = "alarms"
+    private let theAlarms = "alarms"
     var alarms: [Alarm] = []
     
     init() {
@@ -43,11 +43,11 @@ class AlarmController {
     }
     
     func saveToPersistentStorage() {
-        NSKeyedArchiver.archiveRootObject(self.alarms, toFile: filePath(kAlarms))
+        NSKeyedArchiver.archiveRootObject(self.alarms, toFile: filePath(theAlarms))
     }
     
     func loadFromPersistentStorage() {
-        guard let alarms = NSKeyedUnarchiver.unarchiveObjectWithFile(filePath(kAlarms)) as? [Alarm] else {return}
+        guard let alarms = NSKeyedUnarchiver.unarchiveObjectWithFile(filePath(theAlarms)) as? [Alarm] else {return}
         self.alarms = alarms
     }
     
@@ -61,28 +61,3 @@ class AlarmController {
     
 }
 
-protocol AlarmScheduler {
-    func scheduleLocalNotification(alarm: Alarm)
-    func cancelLocalNotification(alarm: Alarm)
-}
-
-extension AlarmScheduler {
-    func scheduleLocalNotification(alarm: Alarm) {
-        let localNotification = UILocalNotification()
-        localNotification.category = alarm.uuid
-        localNotification.alertTitle = "Time's up!"
-        localNotification.alertBody = "Your alarm titled \(alarm.name) is done"
-        localNotification.fireDate = alarm.fireDate
-        localNotification.repeatInterval = .Day
-        UIApplication.sharedApplication().scheduleLocalNotification(localNotification)
-    }
-    
-    func cancelLocalNotification(alarm: Alarm) {
-        guard let scheduledNotifications = UIApplication.sharedApplication().scheduledLocalNotifications else {return}
-        for notification in scheduledNotifications {
-            if notification.category ?? "" == alarm.uuid {
-                UIApplication.sharedApplication().cancelLocalNotification(notification)
-            }
-        }
-    }
-}

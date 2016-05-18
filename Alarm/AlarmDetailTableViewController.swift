@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AlarmDetailTableViewController: UITableViewController, AlarmScheduler {
+class AlarmDetailTableViewController: UITableViewController {
     
     @IBOutlet weak var datePicker: UIDatePicker!
     @IBOutlet weak var alarmTitleTextField: UIDatePicker!
@@ -54,12 +54,11 @@ class AlarmDetailTableViewController: UITableViewController, AlarmScheduler {
         let timeIntervalSinceMidnight = datePicker.date.timeIntervalSinceDate(thisMorningAtMidnight)
         if let alarm = alarm {
             AlarmController.sharedInstance.updateAlarm(alarm, fireTimeFromMidnight: timeIntervalSinceMidnight, name: title)
-            cancelLocalNotification(alarm)
-            scheduleLocalNotification(alarm)
+            
         } else {
             let alarm = AlarmController.sharedInstance.addAlarm(timeIntervalSinceMidnight, name: title)
             self.alarm = alarm
-            scheduleLocalNotification(alarm)
+            
         }
         self.navigationController?.popViewControllerAnimated(true)
     }
@@ -69,9 +68,9 @@ class AlarmDetailTableViewController: UITableViewController, AlarmScheduler {
         guard let alarm = alarm else {return}
         AlarmController.sharedController.toggleEnabled(alarm)
         if alarm.enabled {
-            scheduleLocalNotification(alarm)
+           
         } else {
-            cancelLocalNotification(alarm)
+           
         }
         setupView()
     }

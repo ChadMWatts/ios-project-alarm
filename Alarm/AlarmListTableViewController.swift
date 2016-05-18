@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AlarmListTableViewController: UITableViewController, SwitchTableViewCellDelegate, AlarmScheduler {
+class AlarmListTableViewController: UITableViewController, SwitchTableViewCellDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,7 +20,7 @@ class AlarmListTableViewController: UITableViewController, SwitchTableViewCellDe
         tableView.reloadData()
     }
     
-    // MARK: - Table view data source
+    // MARK: - Table View
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return AlarmController.sharedController.alarms.count
@@ -36,12 +36,12 @@ class AlarmListTableViewController: UITableViewController, SwitchTableViewCellDe
         return cell
     }
     
-    // Override to support editing the table view.
+    // Override to support 
     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         if editingStyle == .Delete {
             let alarm = AlarmController.sharedController.alarms[indexPath.row]
             AlarmController.sharedController.deleteAlarm(alarm)
-            cancelLocalNotification(alarm)
+            
             tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
         }
     }
@@ -51,9 +51,9 @@ class AlarmListTableViewController: UITableViewController, SwitchTableViewCellDe
         let alarm = AlarmController.sharedController.alarms[indexPath.row]
         AlarmController.sharedController.toggleEnabled(alarm)
         if alarm.enabled {
-            scheduleLocalNotification(alarm)
+            
         } else {
-            cancelLocalNotification(alarm)
+           
         }
         tableView.reloadRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)
     }
