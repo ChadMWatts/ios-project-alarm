@@ -16,8 +16,8 @@ class SwitchTableViewCell: UITableViewCell {
     
     weak var delegate: SwitchTableViewCellDelegate?
     
-    @IBAction func switchValueChanged(sender: UISwitch) {
-        delegate?.switchCellSwitchValueChanged(self)
+    @IBAction func switchValueChanged(sender: AnyObject) {
+        delegate?.switchCellValueChanged(self)
     }
     
     func updateWithAlarm(alarm: Alarm) {
@@ -29,5 +29,5 @@ class SwitchTableViewCell: UITableViewCell {
 }
 
 protocol SwitchTableViewCellDelegate: class {
-    func switchCellSwitchValueChanged(cell: SwitchTableViewCell)
+    func switchCellValueChanged(cell: SwitchTableViewCell)
 }
