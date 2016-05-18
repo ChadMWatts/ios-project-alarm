@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="14F1713" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="d1R-8u-dUC">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="14F1808" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="d1R-8u-dUC">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
@@ -58,7 +58,7 @@
                                     <outlet property="alarmSwitch" destination="PdT-Te-8Ug" id="Jgq-v3-37a"/>
                                     <outlet property="nameLable" destination="13y-CP-SoF" id="iUl-VR-Xle"/>
                                     <outlet property="timeLable" destination="pem-9B-3oa" id="F6e-Dm-Z14"/>
-                                    <segue destination="q9E-eJ-3eh" kind="show" id="ifa-Q1-Zg0"/>
+                                    <segue destination="q9E-eJ-3eh" kind="show" identifier="alarmSegue" id="ifa-Q1-Zg0"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -70,7 +70,7 @@
                     <navigationItem key="navigationItem" title="Alarm" id="R3D-jJ-8nc">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="BXE-fd-5LW">
                             <connections>
-                                <segue destination="q9E-eJ-3eh" kind="show" id="kwH-M8-9Jo"/>
+                                <segue destination="q9E-eJ-3eh" kind="show" identifier="toAlarmDetail" id="kwH-M8-9Jo"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -151,6 +151,9 @@
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d6i-Dz-6zx">
                                                     <rect key="frame" x="274" y="7" width="51" height="30"/>
                                                     <state key="normal" title="Disable"/>
+                                                    <connections>
+                                                        <action selector="enableButtonTapped:" destination="q9E-eJ-3eh" eventType="touchUpInside" id="VCC-cd-vj6"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <constraints>

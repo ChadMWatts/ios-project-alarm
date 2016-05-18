@@ -76,6 +76,14 @@
 			path = Alarm;
 			sourceTree = "<group>";
 		};
+		4C06E8D31CECAD980095D261 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				4C8348041CEBC7B6001E39E6 /* AlarmController.swift */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
 		4C8347E11CEA8CC9001E39E6 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -98,7 +106,7 @@
 			isa = PBXGroup;
 			children = (
 				4C8348011CEBC52C001E39E6 /* Alarm.swift */,
-				4C8348041CEBC7B6001E39E6 /* AlarmController.swift */,
+				4C06E8D31CECAD980095D261 /* Controllers */,
 			);
 			name = Models;
 			sourceTree = "<group>";

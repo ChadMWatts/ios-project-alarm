@@ -10,23 +10,24 @@ import UIKit
 
 class SwitchTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var timeLable: UITextField!
-    @IBOutlet weak var nameLable: UITextField!
+    @IBOutlet weak var timeLabel: UITextField!
+    @IBOutlet weak var nameLabel: UITextField!
     @IBOutlet weak var alarmSwitch: UISwitch!
     
+    weak var delegate: SwitchTableViewCellDelegate?
     
-    
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
-
-    override func setSelected(selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
-
     @IBAction func switchValueChanged(sender: UISwitch) {
+        delegate?.switchCellSwitchValueChanged(self)
     }
+    
+    func updateWithAlarm(alarm: Alarm) {
+        timeLabel.text = alarm.fireTimeAsString
+        nameLabel.text = alarm.name
+        alarmSwitch.on = alarm.enabled
+    }
+    
+}
+
+protocol SwitchTableViewCellDelegate: class {
+    func switchCellSwitchValueChanged(cell: SwitchTableViewCell)
 }
