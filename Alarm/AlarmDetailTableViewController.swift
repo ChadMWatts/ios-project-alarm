@@ -14,15 +14,16 @@ class AlarmDetailTableViewController: UITableViewController {
     @IBOutlet weak var textField: UITextField!
     @IBOutlet weak var enableButton: UIButton!
     
+    var alarm = Alarm?
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+    }
+    
+    func updateWithAlarm(alarm: Alarm) {
+        
+        guard let 
     }
 
     override func didReceiveMemoryWarning() {
