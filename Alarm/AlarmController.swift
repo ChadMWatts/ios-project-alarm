@@ -14,6 +14,11 @@ class AlarmController {
     
     var alarms: [Alarm] = []
     
+    
+    init () {
+        alarms = mockAlarms
+    }
+    
     var mockAlarms: [Alarm] {
         
         var wakeUpAlarm = Alarm(fireTimeFromMidnight: 0600, name: "wakeUpAlarm")
@@ -22,10 +27,7 @@ class AlarmController {
         
         return [wakeUpAlarm, schoolAlarm, breakAlarm]
     }
-    
-    init () {
-       alarms = mockAlarms
-    }
+   
     
     
     func addAlarm(fireTimeFromMidnight: NSTimeInterval, name: String) -> Alarm {
