@@ -30,6 +30,16 @@ class AlarmDetailTableViewController: UITableViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    // Mark: - Functions
+    
+    func updateWithAlarm(alarm: Alarm) {
+        
+        guard let thisMorningAtMidnight = DateHelper.thisMorningAtMidnight else {return}
+        datePicker.setDate(NSDate(timeInterval: alarm.fireTimeFromMidnight, sinceDate: thisMorningAtMidnight), animated: false)
+        textField.text = alarm.name
+        self.title = alarm.name
+    }
 
     // MARK: - Table view data source
 
