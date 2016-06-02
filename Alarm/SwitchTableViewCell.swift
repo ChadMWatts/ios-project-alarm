@@ -21,17 +21,7 @@ class SwitchTableViewCell: UITableViewCell {
         nameLabel.text = alarm.name
         alarmSwitch.on = alarm.enabled
     }
-    
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
-    
-    override func setSelected(selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-        
-        // Configure the view for the selected state
-    }
+
     
     @IBAction func switchValueChanged(sender: AnyObject) {
         delegate?.switchCellValueChanged(self)
